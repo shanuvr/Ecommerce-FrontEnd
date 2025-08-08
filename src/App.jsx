@@ -4,6 +4,7 @@ import AdminDash from "./Admin/AdminDash"
 import Products from "./Admin/products"
 import Categories from "./Admin/Categories"
 import User from "./Admin/User"
+import EditProduct from "./Admin/EditProduct"
 function App() {
 
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/categories" element={<Categories/>}/>
         <Route path="/users" element={<User/>}/>
         <Route path="/home" element={<User/>}/>
+        <Route path="/edit-product/:id" element={<EditProduct/>}/>
          
       </Routes>
     </>

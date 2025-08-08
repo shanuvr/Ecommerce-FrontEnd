@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar';
+import { Link } from 'react-router-dom';
 
 function Products() {
   const [product, setProducts] = useState([]);
@@ -41,7 +42,7 @@ function Products() {
           </thead>
           <tbody>
             {product.map((item, index) => (
-              <tr key={index}>
+              <tr key={index}> 
                 <td className="border border-black px-4 py-2">
                   <img
                     src={`http://localhost:3000/${item.productImage}`} 
@@ -53,9 +54,13 @@ function Products() {
                 <td className="border border-black px-4 py-2">{item.productStock}</td>
                 <td className="border border-black px-4 py-2">{item.productDescription}</td>
                 <td className="border border-black px-4 py-2 space-x-2">
+                              
+                 <Link to={`/edit-product/${item._id}`}>
                   <button className="bg-blue-500 text-white px-2 py-1 rounded hover:bg-blue-600">
-                    Edit
-                  </button>
+                  Edit
+                </button>
+              </Link>
+                  
                   <button className="bg-red-500 text-white px-2 py-1 rounded hover:bg-red-600">
                     Delete
                   </button>

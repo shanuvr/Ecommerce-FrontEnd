@@ -8,11 +8,14 @@ import log from '../assets/Sidebar-Photos/turn-off.png'
 import home from '../assets/Sidebar-Photos/house.png'
 
 function Sidebar() {
+  function handleLogout() {
+
+  }
   return (
-    <div className="w-18 hover:w-52 h-[100vh] bg-gray-200 transition-all duration-500 flex flex-col justify-between overflow-auto fixed ml-0">
+    <div className="w-16 hover:w-52 h-screen bg-gray-200 transition-all duration-500 flex flex-col justify-between overflow-auto fixed">
     
       <div className="flex flex-col gap-8 p-4">
-         <Link to='/Home'>
+         <Link to='/home'>
         <div className="flex items-center gap-4">
           <img src={home} alt="Products" className="max-w-[40px]" />
           <p className="text-lg font-medium">Home</p>
@@ -40,10 +43,13 @@ function Sidebar() {
 
       
       <div className="p-4">
-        <div className="flex items-center gap-4">
+       
+        <div className="flex items-center gap-4" onClick={handleLogout}>
           <img src={log} alt="Categories" className="max-w-[40px]" />
           <p className="text-lg font-medium">Logout</p>
         </div>
+        
+        
       </div>
     </div>
   )
